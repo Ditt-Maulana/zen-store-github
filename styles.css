@@ -1,0 +1,451 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya umum */
+body, html {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #333; /* Warna teks default */
+    background-color: #fff; /* Latar belakang putih untuk seluruh halaman */
+}
+
+/* Kontainer utama */
+.container {
+    background: url('asset/wp.jpeg') no-repeat center center/cover;
+    width: 100%;
+    height: 100vh; /* Tetap menggunakan 100vh untuk tampilan awal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Navbar */
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 15px;
+    position: static; /* Ubah dari sticky ke static */
+    /* Hapus properti top */
+    z-index: 1000;
+    width: 100%;
+}
+.navbar .logo {
+    font-size: 28px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Bayangan teks untuk efek 3D */
+}
+
+.navbar ul {
+    list-style: none; /* Menghapus bullet point */
+    display: flex; /* Menggunakan flexbox untuk item daftar */
+    margin: 0; /* Menghapus margin */
+    padding: 0; /* Menghapus padding */
+}
+
+.navbar ul li {
+    margin: 0 10px; /* Jarak antar item */
+}
+
+.navbar ul li a {
+    color: white; /* Warna tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+    padding: 5px 10px; /* Mengurangi padding untuk area klik yang lebih kecil */
+    border-radius: 5px; /* Sudut membulat untuk tautan */
+    transition: background 0.3s, color 0.3s; /* Transisi untuk efek hover */
+}
+
+.navbar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Latar belakang transparan saat hover */
+    color: #ffcc00; /* Warna saat hover */
+}
+
+.navbar ul li a.active {
+    background: rgba(255, 255, 255, 0.3); /* Latar belakang aktif */
+    color: #000; /* Warna teks hitam untuk tautan aktif */
+}
+
+/* Konten */
+.content {
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang putih transparan untuk konten */
+    padding: 20px; /* Tambahkan padding untuk ruang di dalam konten */
+    border-radius: 10px; /* Sudut membulat untuk konten */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan halus untuk konten */
+    margin-top: 20px; /* Kurangi margin-top karena navbar tidak lagi sticky */
+    color: #000; /* Pastikan teks di bagian konten berwarna hitam */
+}
+
+.content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    color: #000; /* Warna teks hitam */
+}
+
+.content p {
+    font-size: 18px;
+    margin: 10px 0 20px;
+    color: #333; /* Warna teks abu-abu gelap untuk kontras */
+}
+
+.content .btn {
+    background: #007bff; /* Warna tombol biru */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    transition: background 0.3s; /* Transisi latar belakang */
+}
+
+.content .btn:hover {
+    background: #0056b3; /* Warna tombol saat hover */
+}
+
+/* Bagian tentang, produk, dan testimoni */
+.about, .products, .testimonials {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f9f9f9; /* Latar belakang abu-abu muda */
+    border: 2px solid #000; /* Border hitam */
+    border-radius: 10px; /* Sudut membulat */
+    margin: 20px; /* Margin untuk ruang di sekitar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.about h2, .products h2, .testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #333; /* Warna judul */
+}
+
+/* Produk */
+.products {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Latar belakang putih transparan */
+    border-radius: 10px; /* Sudut membulat */
+    margin: 20px; /* Margin untuk ruang di sekitar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Menempatkan produk di tengah */
+    gap: 20px; /* Jarak antar produk */
+}
+
+.product {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Menyelaraskan teks di tengah */
+    width: 220px; /* Atur lebar produk */
+    transition: transform 0.3s; /* Transisi saat hover */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    flex-direction: column; /* Mengatur tata letak vertikal */
+    align-items: center; /* Menyelaraskan konten di tengah */
+}
+
+.product h3 {
+    font-size: 18px; /* Atau bahkan lebih kecil jika diperlukan */
+    margin: 8px 0;
+    line-height: 1.2; /* Mengurangi jarak antar baris */
+}
+
+.product p {
+    font-size: 16px; /* Ukuran font untuk deskripsi produk */
+    margin: 10px 0; /* Jarak atas dan bawah untuk deskripsi produk */
+    line-height: 1.5; /* Jarak antar baris untuk teks deskripsi */
+    text-align: center; /* Menyelaraskan teks deskripsi di tengah */
+}
+
+.product .btn {
+    background: #007bff; /* Warna tombol biru */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px; /* Jarak atas untuk tombol */
+    display: inline-block; /* Agar tombol tidak memenuhi lebar */
+    transition: background 0.3s; /* Transisi latar belakang */
+}
+
+.product .btn:hover {
+    background: #0056b3; /* Warna tombol saat hover */
+}
+
+/* Testimoni */
+.testimonial {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    color: black;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333; /* Warna latar belakang footer */
+    color: white; /* Warna teks footer */
+}
+
+.contact {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Menyelaraskan ikon di tengah */
+    margin-top: 10px; /* Jarak atas untuk daftar kontak */
+    flex-wrap: wrap; /* Membuat daftar responsif */
+}
+
+.contact li {
+    margin: 0 15px; /* Jarak antar ikon */
+}
+
+.contact-link {
+    color: white; /* Warna teks tautan */
+    font-size: 20px; /* Ukuran font untuk tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+    display: flex; /* Menggunakan flexbox untuk menyelaraskan ikon dan teks */
+    align-items: center; /* Menyelaraskan ikon dan teks di tengah */
+    transition: color 0.3s; /* Transisi warna saat hover */
+}
+
+.contact-link:hover {
+    color: #ffcc00; /* Warna saat hover */
+}
+
+.contact-link i {
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    .contact {
+        flex-direction: column; /* Mengatur tata letak vertikal pada layar kecil */
+    }
+
+    .contact li {
+        margin: 10px 0; /* Jarak antar ikon pada layar kecil */
+    }
+
+    .contact-link {
+        font-size: 18px; /* Ukuran font lebih kecil untuk layar kecil */
+    }
+}
+
+/* Gambar logo */
+.logo-img {
+    height: 35px; /* Mengurangi tinggi logo */
+    width: auto; /* Biarkan lebar otomatis untuk menjaga proporsi */
+}
+
+/* Portofolio */
+.portfolio {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f9f9f9; /* Latar belakang abu-abu muda */
+    border: 2px solid #000; /* Border hitam */
+    border-radius: 10px; /* Sudut membulat */
+    margin: 20px; /* Margin untuk ruang di sekitar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.portfolio h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #333; /* Warna judul */
+}
+
+.portfolio-content {
+    overflow: hidden; /* Menyembunyikan bagian yang keluar dari kontainer */
+    display: flex;
+    flex-direction: column; /* Mengatur tata letak vertikal */
+    align-items: center; /* Menyelaraskan konten di tengah */
+}
+
+.portfolio-img {
+    width: 100%; /* Gambar memenuhi lebar kontainer */
+    max-width: 400px; /* Maksimal lebar gambar */
+    border-radius: 10px; /* Sudut membulat untuk gambar */
+    margin-bottom: 20px; /* Jarak bawah untuk gambar */
+}
+
+/* Bagian tentang */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Latar belakang putih transparan */
+    border: 2px solid #000; /* Border hitam */
+    border-radius: 10px; /* Sudut membulat */
+    margin: 20px; /* Margin untuk ruang di sekitar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007bff; /* Warna judul */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column; /* Mengatur tata letak vertikal */
+    align-items: center; /* Menyelaraskan konten di tengah */
+}
+
+.about-img {
+    width: 100%; /* Gambar memenuhi lebar kontainer */
+    max-width: 300px; /* Maksimal lebar gambar */
+    border-radius: 10px; /* Sudut membulat untuk gambar */
+    margin-bottom: 20px; /* Jarak bawah untuk gambar */
+}
+
+.about-text {
+    max-width: 600px; /* Maksimal lebar teks */
+    color: #333; /* Warna teks */
+}
+
+.about-text p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Gaya untuk ikon sosial */
+.social-link {
+    display: flex; /* Menggunakan flexbox untuk menyelaraskan ikon */
+    align-items: center; /* Menyelaraskan ikon di tengah */
+    font-size: 20px; /* Ukuran font untuk ikon */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Mengatur tata letak vertikal pada layar kecil */
+        align-items: center; /* Menyelaraskan item di tengah */
+    }
+
+    .navbar ul li {
+        margin: 5px 0; /* Jarak antar item pada layar kecil */
+    }
+}
+
+.testimonials {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f9f9f9; /* Latar belakang abu-abu muda */
+    border-radius: 10px; /* Sudut membulat */
+    margin: 20px; /* Margin untuk ruang di sekitar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333; /* Warna judul */
+}
+
+.testimonial-container {
+    display: flex;
+    flex-direction: column; /* Mengatur tata letak vertikal */
+    align-items: center; /* Menyelaraskan konten di tengah */
+}
+
+.testimonial {
+    background: #f1f1f1; /* Latar belakang abu-abu muda untuk testimoni */
+    border-radius: 10px; /* Sudut membulat */
+    padding: 20px;
+    margin: 10px 0; /* Jarak antar testimoni */
+    width: 80%; /* Lebar testimoni */
+    max-width: 600px; /* Maksimal lebar testimoni */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+/* Responsif untuk Mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+    }
+
+    .logo-img {
+        max-width: 100px;
+    }
+
+    .content h1 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .product {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .portfolio-content {
+        flex-direction: column;
+    }
+
+    .portfolio-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+    }
+
+    .testimonial {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    footer ul.contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer ul.contact li {
+        margin: 5px 0;
+    }
+}
